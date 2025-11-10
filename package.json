@@ -1,0 +1,27 @@
+{
+  "name": "opencode-allowlist",
+  "version": "0.1.0",
+  "description": "OpenCode plugin to auto-allow access to configured directories",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target node",
+    "test": "bun test"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "workspace",
+    "permissions"
+  ],
+  "author": "crayment",
+  "license": "MIT",
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
