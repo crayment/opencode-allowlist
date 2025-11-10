@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenCode Allowlist Configuration",
+  "description": "Configuration for allowed directories in OpenCode allowlist plugin",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "allowedDirectories": {
+      "type": "array",
+      "description": "List of absolute directory paths that should be auto-allowed for file access",
+      "items": {
+        "type": "string",
+        "pattern": "^/",
+        "description": "Absolute path to an allowed directory"
+      },
+      "uniqueItems": true,
+      "examples": [["/Users/username/dev/projects", "/opt/shared/libraries"]]
+    }
+  },
+  "required": ["allowedDirectories"],
+  "additionalProperties": false
+}

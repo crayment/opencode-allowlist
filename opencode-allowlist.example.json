@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/crayment/opencode-allowlist/main/schema.json",
+  "allowedDirectories": [
+    "/Users/your-username/dev/workspace/projects",
+    "/path/to/another/workspace"
+  ]
+}
