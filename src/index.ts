@@ -126,8 +126,14 @@ export const AllowlistPlugin: Plugin = async ({ directory, worktree }) => {
       const normalizedAllowed = path.resolve(allowedDir);
       const normalizedRequested = path.resolve(requestedPath);
       
+      // Check if paths match with proper boundary checking
       if (normalizedRequested.startsWith(normalizedAllowed)) {
-        return true;
+        // Ensure we're matching a directory boundary, not just a prefix
+        // e.g., /foo/bar should match /foo/bar/baz but not /foo/barbaz
+        const nextChar = normalizedRequested[normalizedAllowed.length];
+        if (nextChar === undefined || nextChar === path.sep) {
+          return true;
+        }
       }
     }
     return false;
